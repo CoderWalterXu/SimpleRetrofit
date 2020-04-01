@@ -43,6 +43,7 @@ class ServiceMethod {
     }
 
     // 发起请求
+    // args是方法的参数值（144.34.161.97，aa205eeb45aa76c6afe3c52151b52160）
     public Call toCall(Object[] args) {
         // 实例化RequestBuilde对象，拼接完整请求url（包含参数名和参数值）
         // http://apis.juhe.cn/ip/ipNew?ip=144.34.161.97&key=aa205eeb45aa76c6afe3c52151b52160
