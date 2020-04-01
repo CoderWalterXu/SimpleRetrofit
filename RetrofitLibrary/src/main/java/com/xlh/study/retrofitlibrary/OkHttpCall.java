@@ -10,7 +10,7 @@ import okhttp3.Response;
 /**
  * @author: Watler Xu
  * time:2020/4/1
- * description:
+ * description: 实现okhttp3.Call接口方法
  * version:0.0.1
  */
 class OkHttpCall implements Call {

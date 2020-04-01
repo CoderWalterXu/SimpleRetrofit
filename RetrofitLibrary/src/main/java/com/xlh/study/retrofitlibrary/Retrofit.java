@@ -81,7 +81,8 @@ public class Retrofit {
         return (T) Proxy.newProxyInstance(service.getClassLoader(), new Class[]{service}, new InvocationHandler() {
             @Override
             public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
-                // 获取方法所有内容：方法名，方法的注解，方法参数的注解，方法的参数
+                // 获取方法所有内容：方法名（getIpMethod、postIpMethod）、方法注解（@GET、@POST）、方法注解的值（/ip/ipNew）、方法参数的注解（@Query、@Field），方法的参数（ip、key）
+                // args是方法的参数值（144.34.161.97，aa205eeb45aa76c6afe3c52151b52160）
                 // 将method所有信息拦截之后，存储到ServiceMethod(JavaBean实体类)
                 ServiceMethod serviceMethod = loadServiceMethod(method);
                 return new OkHttpCall(serviceMethod, args);
@@ -89,7 +90,7 @@ public class Retrofit {
         });
     }
 
-    // 获取方法所有内容：方法名、方法注解、参数注解、参数
+    // 获取方法所有内容：方法名（getIpMethod、postIpMethod）、方法注解（@GET、@POST）、方法注解的值（/ip/ipNew）、方法参数的注解（@Query、@Field），方法的参数（ip、key）
     private ServiceMethod loadServiceMethod(Method method) {
         ServiceMethod result = serviceMethodCache.get(method);
         if (result != null) {

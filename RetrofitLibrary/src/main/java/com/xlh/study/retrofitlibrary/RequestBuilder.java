@@ -24,7 +24,7 @@ public class RequestBuilder {
     private String relativeUrl;
     // 请求url构建者（构建完整请求url:http://apis.juhe.cn/ip/ipNew）
     private HttpUrl.Builder urlBuilder;
-    // Form表单构架者
+    // Form表单构建者
     private FormBody.Builder formBuilder;
     // 构建完整请求（包含url、method、body）
     private final Request.Builder requestBuilder;

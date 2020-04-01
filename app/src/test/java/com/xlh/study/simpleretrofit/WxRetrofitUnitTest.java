@@ -27,10 +27,10 @@ public class WxRetrofitUnitTest {
 
     interface HOST {
         @GET("/ip/ipNew")
-        Call get(@Query("ip") String ip, @Query("key") String key);
+        Call getIpMethod(@Query("ip") String ip, @Query("key") String key);
 
         @POST("/ip/ipNew")
-        Call post(@Field("ip") String ip, @Field("key") String key);
+        Call postIpMethod(@Field("ip") String ip, @Field("key") String key);
     }
 
     @Test
@@ -44,7 +44,7 @@ public class WxRetrofitUnitTest {
 
         // Retrofit GET同步请求
         {
-            Call call = host.get(IP,KEY);
+            Call call = host.getIpMethod(IP,KEY);
 
             Response response = call.execute();
             if (response != null && response.body() != null) {
@@ -54,7 +54,7 @@ public class WxRetrofitUnitTest {
 
         // Retrofit POST同步请求
         {
-            Call call = host.post(IP,KEY);
+            Call call = host.postIpMethod(IP,KEY);
 
             Response response = call.execute();
             if (response != null && response.body() != null) {
