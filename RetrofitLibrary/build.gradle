@@ -1,0 +1,14 @@
+apply plugin: 'java-library'
+
+tasks.withType(JavaCompile) {
+    options.encoding = "UTF-8"
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation("com.squareup.okhttp3:okhttp:3.6.0")
+}
+
+sourceCompatibility = "7"
+targetCompatibility = "7"
